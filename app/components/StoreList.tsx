@@ -14,7 +14,7 @@ export default function StoreList({ stores, selectedStore, onSelectStore }: Stor
     if (selectedStore) {
       const element = document.getElementById(`store-card-${selectedStore.name}`);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        element.scrollIntoView({ behavior: 'auto', block: 'center' });
       }
     }
   }, [selectedStore]);
