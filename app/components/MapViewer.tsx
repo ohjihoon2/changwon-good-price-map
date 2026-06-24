@@ -181,7 +181,8 @@ export default function MapViewer({ stores, selectedStore, onSelectStore }: MapV
         mapRef.current.panTo(coords);
         
         // Open central info window (padding-right: 35px 추가하여 X 버튼과 겹치지 않게 함)
-        infoWindowRef.current.setContent(`<div style="padding:10px 35px 10px 15px;font-size:14px;border-radius:12px;font-family:inherit;box-shadow:0 4px 15px rgba(0,0,0,0.1);"><strong style="color:#e11d48;">${selectedStore.name}</strong><br><span style="font-size:12px;color:#64748b;margin-top:4px;display:block;">${selectedStore.category}</span></div>`);
+        const directionUrl = selectedStore.lat && selectedStore.lng ? `https://map.kakao.com/link/to/${selectedStore.name},${selectedStore.lat},${selectedStore.lng}` : `https://map.kakao.com/link/search/${selectedStore.location}`;
+        infoWindowRef.current.setContent(`<div style="padding:15px 35px 15px 15px;font-size:14px;border-radius:12px;font-family:inherit;min-width:180px;"><strong style="color:#e11d48;font-size:16px;">${selectedStore.name}</strong><br><span style="font-size:12px;color:#64748b;margin-top:4px;display:block;">${selectedStore.category}</span><a href="${directionUrl}" target="_blank" style="display:inline-flex;align-items:center;gap:4px;margin-top:10px;background:#eff6ff;color:#2563eb;padding:6px 12px;border-radius:6px;text-decoration:none;font-weight:bold;font-size:13px;transition:all 0.2s;"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>카카오맵 길찾기</a></div>`);
         infoWindowRef.current.setPosition(coords);
         infoWindowRef.current.setMap(mapRef.current);
       };
@@ -206,11 +207,46 @@ export default function MapViewer({ stores, selectedStore, onSelectStore }: MapV
     }
   }, [mapLoaded, selectedStore]);
 
+  // 내 위치 기능
+  const moveToMyLocation = () => {
+    if (navigator.geolocation && mapRef.current) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        const locPosition = new window.kakao.maps.LatLng(lat, lon);
+        mapRef.current.panTo(locPosition);
+        
+        // Add a simple marker for my location if not exists
+        if (!(window as any).myLocMarker) {
+          const content = document.createElement('div');
+          content.innerHTML = `<div class="w-5 h-5 bg-blue-500 rounded-full border-[3px] border-white shadow-[0_0_12px_rgba(59,130,246,0.6)] animate-pulse"></div>`;
+          (window as any).myLocMarker = new window.kakao.maps.CustomOverlay({
+            position: locPosition,
+            content: content
+          });
+          (window as any).myLocMarker.setMap(mapRef.current);
+        } else {
+          (window as any).myLocMarker.setPosition(locPosition);
+        }
+      });
+    } else {
+      alert("현재 위치를 가져올 수 없습니다. 브라우저의 위치 권한을 허용해주세요.");
+    }
+  };
+
   if (!apiKey) return null;
 
   return (
     <div className="w-full h-full relative bg-slate-100">
       <div ref={containerRef} className="w-full h-full" />
+      {/* 내 위치 버튼 */}
+      <button 
+        onClick={moveToMyLocation}
+        className="absolute bottom-6 right-6 z-10 bg-white p-3.5 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.15)] border border-slate-100 hover:bg-slate-50 hover:scale-105 active:scale-95 transition-all text-slate-700 group"
+        title="내 위치로 이동"
+      >
+        <svg className="w-6 h-6 group-hover:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+      </button>
     </div>
   );
 }

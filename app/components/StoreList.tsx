@@ -21,9 +21,12 @@ export default function StoreList({ stores, selectedStore, onSelectStore }: Stor
 
   if (stores.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center h-48 text-slate-400">
-        <svg className="w-12 h-12 mb-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-        <p>검색 결과가 없습니다.</p>
+      <div className="flex flex-col items-center justify-center h-full min-h-[300px] text-slate-500 bg-white/50 rounded-2xl border border-dashed border-slate-200 m-2">
+        <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4">
+          <span className="text-3xl">🫥</span>
+        </div>
+        <h3 className="text-lg font-bold text-slate-700 mb-1">앗! 일치하는 식당이 없어요</h3>
+        <p className="text-sm text-slate-500">다른 검색어나 카테고리를 선택해보세요!</p>
       </div>
     );
   }
