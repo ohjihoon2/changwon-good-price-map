@@ -1,0 +1,508 @@
+﻿
+
+
+
+
+
+
+
+
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>창원관광</title>
+    
+
+    <link rel="stylesheet" href="/tour/site/001/contents/css/8.css"/> <!-- base.css -->
+    <link rel="stylesheet" href="/tour/site/001/contents/css/9.css"/> <!-- common.css -->
+    <link rel="stylesheet" href="/tour/site/001/contents/css/109.css"/> <!-- layout.css -->
+    <link rel="stylesheet" href="/tour/site/001/contents/css/10.css?v=20250414_2"/> <!-- contents.css -->
+    <script src="/tour/site/001/contents/js/jquery-3.4.0.min.js"></script>
+    <script src="/tour/site/001/contents/js/jquery-ui.min.js"></script>
+    <script src="/tour/site/001/contents/js/11.js"></script> <!-- base.js -->
+    <script src="/tour/site/001/contents/js/113.js"></script> <!-- menu.js -->
+    <script src="/tour/site/001/contents/js/115.js"></script> <!-- common.js -->
+    <script src="/tour/site/001/contents/js/14.js"></script> <!-- sub.js -->
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            $.ajax({ url:'/tour/log/logInsert.do?siteCd=001'});		// 로그기록
+        });
+    </script>
+</head>
+<body>
+<div id="skipNav">
+    <a href="#header">주메뉴바로가기</a>
+    <a href="#container">본문바로가기</a>
+</div>
+<div id="wrap" class="main">
+    <!-- header -->
+    
+
+
+
+
+<header id="header">
+	<div id="headerGnb" class="header-gnb">
+	    <div class="inner">
+	        <div class="gnb-btn">
+	            <a href="javascript:void(0)" class="tran" title="en">ENGLISH</a>
+	            <a href="javascript:void(0)" class="tran" title="zh-CN">CHINESE</a> 
+	            <a href="javascript:void(0)" class="tran" title="ja">JAPANESE</a> 
+	            <a href="javascript:void(0)" class="tran" title="vi">VIETNAMESE</a> 
+	        </div>
+	        <div id="google_translate_element" style="display: none;"></div>
+			
+			
+	    </div>
+	</div>
+   <div id="headerNav" class="header-nav">
+       <div class="nav-wrap">
+           <div class="inner">
+               <h1 class="logo">
+                   <a href="/tour/index.do?siteCd=001"><span class="blind">창원관광</span></a>
+               </h1>
+               <button class="nav-m-open">
+                   <span class="blind">전체메뉴</span>
+               </button>
+               <nav id="nav" class="nav">
+                   <div class="nav-m-top">
+                       <h1 class="logo">
+                           <a href="/tour/index.do?siteCd=001"><span class="blind">창원관광</span></a>
+                       </h1>
+                       <div class="gnb-btn toggle-item">
+                           <a href="javascript:void(0)" class="tit tran en">ENGLISH</a>
+                           <div class="toggle-list">
+                               <ul>
+									<li><a href="javascript:void(0)" class="tran" title="en">ENGLISH</a></li>
+									<li><a href="javascript:void(0)" class="tran" title="zh-CN">CHINESE</a> </li>
+									<li><a href="javascript:void(0)" class="tran" title="ja">JAPANESE</a> </li>
+									<li><a href="javascript:void(0)" class="tran" title="vi">VIETNAMESE</a> </li>
+                               </ul>
+                           </div>
+                       </div>
+					   <div id="google_translate_element" style="display: none;"></div>
+                   </div>
+                   <div class="depth1">
+                       <ul>
+                       		
+	                           		<li>
+	                           		<a href="/tour/index.do?menuCode=001_003000000000" target="_self"  class="nav-a1" id="001_003000000000">여행지찾기</a>
+	                       
+                           			</li>
+                           
+	                           		<li class="has-sub">
+		                           		<a href="/tour/index.do?menuCode=001_001000000000" class="nav-a1" id="001_001000000000">추천여행지</a>
+		                           		<div class="depth2">
+		                                   <ul>
+		                                   	
+														<li><a href="/tour/index.do?menuCode=001_001001000000" class="nav-a2" target="_self" >여행탐방기</a></li>			
+													
+														<li><a href="/tour/index.do?menuCode=001_001002000000" class="nav-a2" target="_self" >코스여행</a></li>			
+													
+		                                   </ul>
+		                               </div>
+                           
+                           			</li>
+                           
+	                           		<li>
+	                           		<a href="/tour/index.do?menuCode=001_002000000000" target="_self"  class="nav-a1" id="001_002000000000">맞춤여행</a>
+	                       
+                           			</li>
+                           
+	                           		<li class="has-sub">
+		                           		<a href="/tour/index.do?menuCode=001_004000000000" class="nav-a1" id="001_004000000000">여행정보</a>
+		                           		<div class="depth2">
+		                                   <ul>
+		                                   	
+														<li><a href="/tour/index.do?menuCode=001_004001000000" class="nav-a2" target="_self" >새소식</a></li>			
+													
+														<li><a href="/tour/index.do?menuCode=001_004009000000" class="nav-a2" target="" >관광안내지도신청</a></li>			
+													
+														<li><a href="/tour/index.do?menuCode=001_004002000000" class="nav-a2" target="_self" >여행Q&A</a></li>			
+													
+														<li><a href="/tour/index.do?menuCode=001_004003000000" class="nav-a2" target="_self" >창원의순간들</a></li>			
+													
+														<li><a href="/tour/index.do?menuCode=001_004010000000" class="nav-a2" target="_blank" title="새창으로 열림">열린관광지</a></li>			
+													
+														<li><a href="/tour/index.do?menuCode=001_004007000000" class="nav-a2" target="_self" >관광 자료실</a></li>			
+													
+														<li><a href="/tour/index.do?menuCode=001_004004000000" class="nav-a2" target="_self" >음식점</a></li>			
+													
+														<li><a href="/tour/index.do?menuCode=001_004005000000" class="nav-a2" target="_self" >숙박</a></li>			
+													
+														<li><a href="/tour/index.do?menuCode=001_004008000000" class="nav-a2" target="_self" >쇼핑</a></li>			
+													
+														<li><a href="/tour/index.do?menuCode=001_004006000000" class="nav-a2" target="_self" >여행도우미</a></li>			
+													
+		                                   </ul>
+		                               </div>
+                           
+                           			</li>
+                           
+                       </ul>
+                   </div>
+                   <button class="nav-m-close">
+                    <span class="blind">전체메뉴 닫기</span>
+                    </button>
+                    <div class="nav-btn-wrap">
+                        <a href="/tour/index.do?menuCode=001_005002000000" class="map-btn"><span class="hover-txt">관광지도</span></a>
+                        <a href="/tour/index.do?menuCode=001_005001000000" class="cal-btn"><span class="hover-txt">행사달력</span></a>
+                        <button type="button" class="search-btn-open"><span class="blind">검색 열기</span></button>
+                     </div>
+                    <div class="search-frm">
+                        <div class="inner">
+                            <form action="/tour/index.do" method="get">
+                                <input type="hidden" name="menuCode" value="001_007000000000">
+                                <input type="text" name="search.searchKeyword" id="" class="search-input" placeholder="무엇이 궁금하신가요?" title="검색">
+                                <button type="submit" class="search-btn"><span class="blind">검색</span></button>
+                            </form>
+                            <button type="button" class="search-btn-close"><span class="blind">검색 닫기</span></button>    
+                        </div>
+                    </div>
+                </nav>
+                
+               
+                 <div class="nav-bg">
+                    <div class="inner">
+						<!-- <h3 class="tit">추천여행지</h3> -->
+					</div>
+                 </div>
+
+            </div>
+        </div>
+        <div class="header-mask"></div>
+    </div>
+</header>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript">
+	window.onload = function() {
+		googleTranslateElementInit();
+	}
+	
+	function googleTranslateElementInit() {
+		new google.translate.TranslateElement({pageLanguage: 'ko',autoDisplay: true}, 'google_translate_element');
+	}
+	
+	let tranBtn = document.querySelectorAll('.tran');
+	for(let i = 0; i < tranBtn.length; i++) {
+		let lang = tranBtn[i].title;
+		tranBtn[i].addEventListener('click',function(event) {
+			let el = event.target;
+			if(el != null){
+				while(el.nodeName == 'FONT' || el.nodeName == 'SPAN'){
+	            	el = el.parentElement;
+	            }
+				const gtcombo = document.querySelector('.goog-te-combo');
+				console.log(gtcombo);
+				if (gtcombo == null) {
+					alert("Error: Could not find Google translate Combolist.");
+					return false;
+				}
+				gtcombo.value = lang;
+				gtcombo.dispatchEvent(new Event('change')); 
+			}
+			document.querySelector("#google_translate_element").style.display = "none";
+			return false;
+		});
+	}
+</script>
+
+
+    <!-- header end -->
+
+    <main id="container" class="container">
+        <!-- subVisual -->
+        
+
+
+
+
+<section class="sub-vis">
+	<div class="svis">
+	    <div class="tit">
+	        <img src="/tour/resource/cwtour/images/sub/tour_info_icon.png" alt="서브 배경아이콘"> 
+	        <h3>여행정보</h3>
+	    </div>
+	    <div class="img">
+	        <img src="/tour/resource/cwtour/images/sub/tour_info.jpeg" alt="서브 배경화면">
+	    </div>
+	</div>
+	
+	<div class="snav">
+	    <div class="inner">
+	        <ul class="snav-list">
+	            <li><a href="/tour/index.do?siteCd=001" class="home"><span class="blind">홈</span></a></li>
+	            
+	            <li class="snav-select toggle-item">
+	                <a href="#" class="tit">여행정보</a>
+	                <div class="snav-select-list toggle-list">
+	                    <ul>
+	                    	
+	                        <li>
+	                        	<a href="/tour/index.do?menuCode=001_003000000000" target="_self"  class="nav-a1">여행지찾기</a>
+	                        </li>
+	                        
+	                        <li>
+	                        	<a href="/tour/index.do?menuCode=001_001000000000" target="_self"  class="nav-a1">추천여행지</a>
+	                        </li>
+	                        
+	                        <li>
+	                        	<a href="/tour/index.do?menuCode=001_002000000000" target="_self"  class="nav-a1">맞춤여행</a>
+	                        </li>
+	                        
+	                        <li>
+	                        	<a href="/tour/index.do?menuCode=001_004000000000" target="_self"  class="nav-a1">여행정보</a>
+	                        </li>
+	                        
+	                    </ul>    
+	                </div>
+	            </li>
+	            
+	            
+	            
+	            
+	            
+	             	<li class="snav-select toggle-item">
+		                <a href="#" class="tit">음식점</a>
+		                <div class="snav-select-list toggle-list">
+		                    <ul>
+		                    	
+											<li>
+												<a href="/tour/index.do?menuCode=001_004001000000" target="_self" >새소식</a>
+											</li>			
+										
+											<li>
+												<a href="/tour/index.do?menuCode=001_004009000000" target="" >관광안내지도신청</a>
+											</li>			
+										
+											<li>
+												<a href="/tour/index.do?menuCode=001_004002000000" target="_self" >여행Q&A</a>
+											</li>			
+										
+											<li>
+												<a href="/tour/index.do?menuCode=001_004003000000" target="_self" >창원의순간들</a>
+											</li>			
+										
+											<li>
+												<a href="/tour/index.do?menuCode=001_004010000000" target="_blank" title="새창으로 열림">열린관광지</a>
+											</li>			
+										
+											<li>
+												<a href="/tour/index.do?menuCode=001_004007000000" target="_self" >관광 자료실</a>
+											</li>			
+										
+											<li>
+												<a href="/tour/index.do?menuCode=001_004004000000" target="_self" >음식점</a>
+											</li>			
+										
+											<li>
+												<a href="/tour/index.do?menuCode=001_004005000000" target="_self" >숙박</a>
+											</li>			
+										
+											<li>
+												<a href="/tour/index.do?menuCode=001_004008000000" target="_self" >쇼핑</a>
+											</li>			
+										
+											<li>
+												<a href="/tour/index.do?menuCode=001_004006000000" target="_self" >여행도우미</a>
+											</li>			
+										
+		                    </ul>    
+		                </div> 
+		            </li>
+	            
+	            
+	            
+	            
+	            
+	             	<li class="snav-select toggle-item">
+		                <a href="#" class="tit">임신부할인음식점</a>
+		                <div class="snav-select-list toggle-list">
+		                    <ul>
+		                    	
+									<li>
+										<a href="/tour/index.do?menuCode=001_004004002000&search.searchKeyword=&page.pageNo=1&search.searchCategory=CGR" target="_self" >창원맛집</a>
+									</li>			
+								
+									<li>
+										<a href="/tour/index.do?menuCode=001_004004003000&search.searchKeyword=&page.pageNo=1&search.searchCategory=EF" target="_self" >모범음식점</a>
+									</li>			
+								
+									<li>
+										<a href="/tour/index.do?menuCode=001_004004001000&search.searchKeyword=&page.pageNo=1&search.searchCategory=FSS" target="_self" >음식특화거리</a>
+									</li>			
+								
+									<li>
+										<a href="/tour/index.do?menuCode=001_004004004000" target="_self" >위생등급제 지정업소</a>
+									</li>			
+								
+									<li>
+										<a href="/tour/index.do?menuCode=001_004004005000" target="_self" >안심식당 지정</a>
+									</li>			
+								
+									<li>
+										<a href="/tour/index.do?menuCode=001_004004006000" target="_self" >입영장병 할인</a>
+									</li>			
+								
+									<li>
+										<a href="/tour/index.do?menuCode=001_004004007000" target="_self" >임신부할인음식점</a>
+									</li>			
+								
+									<li>
+										<a href="/tour/index.do?menuCode=001_004004008000" target="" >맛스터요리학교</a>
+									</li>			
+								
+									<li>
+										<a href="/tour/index.do?menuCode=001_004004009000" target="_blank" title="새창으로 열림">착한가격업소</a>
+									</li>			
+								
+		                    </ul>    
+		                </div> 
+		            </li>
+	            
+	        </ul>
+			<div class="share-list-wrap">
+				<div class="share-sns">
+					<input type="hidden" name="copyLink" id="copyLink" value="">
+					<button type="button" class="sns-open"><span class="blind">공유하기</span></button>
+					<div class="share-list">
+						<ul>
+							<li><button type="button" class="btn btn-fb"  title="새창열림" onclick="snsShare.share('facebook', '');"><span class="blind">페이스북</span></button></li>
+							<li><button type="button" class="btn btn-twt"  title="새창열림" onclick="snsShare.share('x', '');"><span class="blind">엑스(트위터)</span></button></li>
+							<li><button type="button" class="btn btn-band"  title="새창열림" onclick="snsShare.share('band', '');"><span class="blind">네이버 밴드</span></button></li>
+							<li><button type="button" class="btn btn-blog"  title="새창열림" onclick="snsShare.share('blog', '');"><span class="blind">네이버 블로그</span></button></li>
+							<li><button type="button" class="btn btn-print" onclick="window.print();"><span class="blind">인쇄</span></button></li>
+						</ul>
+						<button type="button" class="sns-close"><span class="blind">닫기</span></button>
+					</div>
+				</div>
+			</div>
+	    </div>
+	</div>
+
+</section>
+
+
+        <!-- subVisual end -->
+
+        <!-- contents -->
+        <section id="contents" class="sub-contents-wrap inner">
+
+
+
+
+
+
+<script src="/tour/resource/js/jquery-3.4.0.min.js"></script>
+<script type="text/javascript" src="/tour/resource/cwtour/js/common.js"></script>
+
+<div class="tbl-wrap travel-info">
+<table class="tbl travel-info">
+  <caption><span class="blind">임산부할인음식점에 관한 표로 연번, 업종, 업소명, 소재지, 주메뉴 순으로 정보제공</span></caption>
+	<colgroup>
+    <col style="width: 5%;">
+    <col style="width: 8%;">
+    <col style="width: 20%;">
+    <col style="width: 35%;">
+    <col style="width: 15%;">
+  </colgroup>
+  <thead>
+		<tr>
+		  <th scope="col">연번</th>
+		  <th scope="col">업종</th>
+		  <th scope="col">업소명</th>
+		  <th scope="col">소재지</th>
+		  <th scope="col">주메뉴</th>
+		</tr>
+	</thead>
+<tbody id="dataList">
+
+</tbody>
+</table>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    callExcelData();
+  })
+
+  const callExcelData = () => {
+    const url = '/tour/foodUser/getFoodExcelList.do';
+    const params = new URLSearchParams();
+    params.append('type', 'mom');
+    callApi(url, params.toString(), '위생음식점 정보').then((response) => {
+      if (response != null) {
+        printList(response.result);
+      }
+    })
+  }
+
+  const printList = (dataList) => {
+    const target = document.querySelector('tbody#dataList');
+    const tbodyElement = document.createElement('tbody');
+    tbodyElement.id = 'dataList';
+
+    if (dataList != null && dataList.length > 0) {
+      dataList.forEach((data, index) => {
+        const trElement = document.createElement('tr');
+        trElement.innerHTML = `<td class="num">${index + 1}</td>
+				<td data-name="업종">${data.category}</td>
+				<td data-name="업소명">${data.name}</td>
+				<td data-name="소재지">${data.address}</td>
+			  	<td data-name="주메뉴">${data.mainMenu}</td>
+			`;
+        tbodyElement.appendChild(trElement);
+      })
+    } else {
+      const trElement = document.createElement('tr');
+      trElement.innerHTML = `<td colspan="5">조회결과가 없습니다.</td>`;
+      tbodyElement.appendChild(trElement);
+    }
+
+    target.replaceWith(tbodyElement);
+  }
+</script>
+
+
+
+
+    
+</div>
+</section>
+</main>
+<footer>
+    <a href="#wrap" class="btn-top"><span>TOP</span></a>
+    <div class="f-cont inner">
+            <ul class="top">
+                <li><a href="https://www.changwon.go.kr/cwportal/10783/10908/10909.web" target="_blank" title="새창열림">개인정보취급방침</a></li>
+                <li><a href="https://www.changwon.go.kr/cwportal/10783/10913.web" target="_blank" title="새창열림">저작권보호정책</a></li>
+                <li><a href="tel:055-225-3701">전화번호</a></li>
+                <li><a href="https://www.changwon.go.kr/cwportal/10671/10684/10699.web" target="_blank" title="새창열림">찾아오시는길</a></li>
+                
+            </ul>
+            <div class="qr"><img src="https://changwon.go.kr/tour/board/boardImageView.do?boardNo=7&dataNo=1005&fileNo=499" alt="창원관광qr코드"></div>
+            <div class="f-logo">
+                <img src="resource/cwtour/images/common/footer_logo.png" alt="창원관광">
+            </div>
+            <div class="f-info">
+                <address>(우 51435) 경상남도 창원시 성산구 중앙대로 151(용호동) Tel: 055)225-3701·Fax: 055)225-4724 </address>
+                <p>Copyright 2016 GHANGWON CITY HALL. ALL RIGHTS RESEVED.</p>    
+            </div>
+            <ul>
+                <li><a href="#">관광안내전화 1330</a></li>
+                <li><a href="https://www.changwon.go.kr/cwportal/biz.web" target="_blank" title="새창열림">창원서비스업 114</a></li>
+                <li><a href="http://xn--zb0b8a770jwtdstaz8ulrsf2a.com/" target="_blank" title="새창열림">(사)창원시관광협의회</a></li>
+            </ul>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
