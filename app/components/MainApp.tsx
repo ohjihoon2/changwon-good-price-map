@@ -28,20 +28,8 @@ export default function MainApp({ initialStores }: { initialStores: Store[] }) {
   }, [initialStores, searchTerm, selectedCategory]);
 
   return (
-    <div className="flex h-full w-full relative overflow-hidden bg-slate-100">
+    <div className="flex flex-col md:flex-row h-full w-full relative overflow-hidden bg-slate-100">
       
-      {/* Map Area (Full screen on mobile, right side on desktop) */}
-      <main className="absolute inset-0 md:relative md:flex-1 w-full h-full z-0">
-        <MapViewer 
-          stores={filteredStores} 
-          selectedStore={selectedStore} 
-          onSelectStore={(store) => {
-            setSelectedStore(store);
-            setIsMobileListOpen(true); // 모바일에서 마커 누르면 정보창(시트) 열리기
-          }}
-        />
-      </main>
-
       {/* Sidebar Area (Bottom sheet on mobile, left panel on desktop) */}
       <aside className={`
         absolute md:relative z-20 
@@ -85,6 +73,18 @@ export default function MainApp({ initialStores }: { initialStores: Store[] }) {
           />
         </div>
       </aside>
+
+      {/* Map Area (Full screen on mobile, right side on desktop) */}
+      <main className="absolute inset-0 md:relative md:flex-1 w-full h-full z-0">
+        <MapViewer 
+          stores={filteredStores} 
+          selectedStore={selectedStore} 
+          onSelectStore={(store) => {
+            setSelectedStore(store);
+            setIsMobileListOpen(true); // 모바일에서 마커 누르면 정보창(시트) 열리기
+          }}
+        />
+      </main>
 
       {/* Mobile Toggle FAB */}
       <button
