@@ -3,4 +3,6 @@ export interface Store {
   location: string;
   category: string;
   mainMenu: string;
+  lat?: number;
+  lng?: number;
 }

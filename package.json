@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "update-data": "node scripts/crawler.js && node scripts/geocode_kakao_web.js"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

@@ -1,10 +1,13 @@
-name: Weekly Crawler Data Update
+name: Update Store Data
 
 on:
   schedule:
-    # 매주 월요일 새벽 3시 KST (UTC 기준 일요일 18:00)
-    - cron: '0 18 * * 0'
-  workflow_dispatch: # 수동 실행 옵션 추가
+    # Run at 15:00 UTC (Midnight KST) every day
+    - cron: '0 15 * * *'
+  workflow_dispatch: # Allow manual trigger from GitHub UI
+
+permissions:
+  contents: write
 
 jobs:
   update-data:
@@ -17,25 +20,24 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # 최신 LTS 버전
-          cache: 'npm'
+          node-version: '18'
 
-      - name: Install Dependencies
-        run: npm ci
+      - name: Install dependencies
+        run: npm install
 
-      - name: Run Crawler
-        run: node scripts/crawler.js
+      - name: Run Crawler and Geocoder
+        run: npm run update-data
 
-      - name: Commit and Push Changes
+      - name: Check for changes
+        id: git-check
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --exit-code public/data.json || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push changes
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add public/data.json
-          
-          # 변경사항이 있는지 확인 후 커밋 (에러 방지)
-          if ! git diff-index --quiet HEAD; then
-            git commit -m "chore(data): weekly update of good price store data"
-            git push
-          else
-            echo "No changes to commit"
-          fi
+          git commit -m "chore(data): auto-update store data and coordinates"
+          git push

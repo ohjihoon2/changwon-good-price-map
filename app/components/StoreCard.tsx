@@ -4,11 +4,13 @@ interface StoreCardProps {
   store: Store;
   isSelected: boolean;
   onClick: () => void;
+  id?: string;
 }
 
-export default function StoreCard({ store, isSelected, onClick }: StoreCardProps) {
+export default function StoreCard({ store, isSelected, onClick, id }: StoreCardProps) {
   return (
     <div 
+      id={id}
       onClick={onClick}
       className={`p-4 rounded-2xl cursor-pointer transition-all duration-200 border ${
         isSelected 

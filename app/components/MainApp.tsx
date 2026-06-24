@@ -54,7 +54,11 @@ export default function MainApp({ initialStores }: { initialStores: Store[] }) {
 
       {/* Map Area */}
       <main className="flex-1 h-1/2 md:h-full relative bg-slate-100">
-        <MapViewer stores={filteredStores} selectedStore={selectedStore} />
+        <MapViewer 
+          stores={filteredStores} 
+          selectedStore={selectedStore} 
+          onSelectStore={setSelectedStore}
+        />
       </main>
     </div>
   );

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Store } from "../types";
 import StoreCard from "./StoreCard";
 
@@ -8,6 +9,16 @@ interface StoreListProps {
 }
 
 export default function StoreList({ stores, selectedStore, onSelectStore }: StoreListProps) {
+  // 스토어가 선택될 때 해당 카드로 자동 스크롤
+  useEffect(() => {
+    if (selectedStore) {
+      const element = document.getElementById(`store-card-${selectedStore.name}`);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+  }, [selectedStore]);
+
   if (stores.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-48 text-slate-400">
@@ -22,6 +33,7 @@ export default function StoreList({ stores, selectedStore, onSelectStore }: Stor
       {stores.map((store, idx) => (
         <StoreCard 
           key={`${store.name}-${idx}`} 
+          id={`store-card-${store.name}`}
           store={store} 
           isSelected={selectedStore?.name === store.name}
           onClick={() => onSelectStore(store)}
