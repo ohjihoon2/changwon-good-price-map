@@ -39,7 +39,7 @@ export default function StoreCard({ store, isSelected, onClick, id }: StoreCardP
 
       <div className="flex justify-end pt-2 border-t border-slate-100">
         <a 
-          href={store.lat && store.lng ? `https://map.kakao.com/link/to/${store.name},${store.lat},${store.lng}` : `https://map.kakao.com/link/search/${store.location}`}
+          href={store.lat && store.lng ? `https://map.kakao.com/link/to/${store.name},${store.lat},${store.lng}` : `https://map.kakao.com/link/search/창원 ${store.name}`}
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}

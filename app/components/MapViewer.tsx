@@ -181,7 +181,7 @@ export default function MapViewer({ stores, selectedStore, onSelectStore }: MapV
         mapRef.current.panTo(coords);
         
         // Open central info window (padding-right: 35px 추가하여 X 버튼과 겹치지 않게 함)
-        const directionUrl = selectedStore.lat && selectedStore.lng ? `https://map.kakao.com/link/to/${selectedStore.name},${selectedStore.lat},${selectedStore.lng}` : `https://map.kakao.com/link/search/${selectedStore.location}`;
+        const directionUrl = selectedStore.lat && selectedStore.lng ? `https://map.kakao.com/link/to/${selectedStore.name},${selectedStore.lat},${selectedStore.lng}` : `https://map.kakao.com/link/search/창원 ${selectedStore.name}`;
         infoWindowRef.current.setContent(`<div style="padding:15px 35px 15px 15px;font-size:14px;border-radius:12px;font-family:inherit;min-width:180px;"><strong style="color:#e11d48;font-size:16px;">${selectedStore.name}</strong><br><span style="font-size:12px;color:#64748b;margin-top:4px;display:block;">${selectedStore.category}</span><a href="${directionUrl}" target="_blank" style="display:inline-flex;align-items:center;gap:4px;margin-top:10px;background:#eff6ff;color:#2563eb;padding:6px 12px;border-radius:6px;text-decoration:none;font-weight:bold;font-size:13px;transition:all 0.2s;"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>카카오맵 길찾기</a></div>`);
         infoWindowRef.current.setPosition(coords);
         infoWindowRef.current.setMap(mapRef.current);
